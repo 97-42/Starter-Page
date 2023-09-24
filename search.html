@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Engine Selector</title>
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1552872673-9b7b99711ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        background-color: #214ee2;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      label {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      select {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+      button[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4285f4;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #357ae8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search the web!</h1>
+    <form id="search-form" method="get">
+      <label for="search-engine">Search engine:</label>
+      <select id="search-engine" name="engine">
+        <option value="google">Google</option>
+        <option value="bing">Bing</option>
+        <option value="yahoo">Yahoo</option>
+      </select>
+      <label for="search-query">Search query:</label>
+      <input type="text" id="search-query" name="q">
+      <button type="submit">Search</button>
+    </form>
+    <script>
+      const form = document.getElementById('search-form');
+      const select = document.getElementById('search-engine');
+      const query = document.getElementById('search-query');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const engine = select.value;
+        const q = query.value;
+        let url;
+        switch (engine) {
+          case 'bing':
+            url = `https://www.bing.com/search?q=${q}`;
+            break;
+          case 'yahoo':
+            url = `https://search.yahoo.com/search?p=${q}`;
+            break;
+          default:
+            url = `https://www.google.com/search?q=${q}`;
+            break;
+        }
+        window.location.href = url;
+      });
+    </script>
+  </body>
+</html>
