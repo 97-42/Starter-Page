@@ -60,6 +60,7 @@
         <option value="google">Google</option>
         <option value="bing">Bing</option>
         <option value="yahoo">Yahoo</option>
+        <option value="duckduckgo">DuckDuckGo</option>
       </select>
       <label for="search-query">Search query:</label>
       <input type="text" id="search-query" name="q">
@@ -81,6 +82,9 @@
             break;
           case 'yahoo':
             url = `https://search.yahoo.com/search?p=${q}`;
+            break;
+          case 'duckduckgo':
+            url = `https://duckduckgo.com/?q=${q}`;
             break;
           default:
             url = `https://www.google.com/search?q=${q}`;
