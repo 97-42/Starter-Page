@@ -4,13 +4,7 @@
     <title>Search Engine Selector</title>
     <style>
       body {
-        background-image: url("<!DOCTYPE html>
-<html>
-  <head>
-    <title>Search Engine Selector</title>
-    <style>
-      body {
-        background-image: url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2015%2F05%2F20%2Fbinladen_wide-5d2e219ab2753fe6513a7fcc9ea14ade4fe9b621.jpg&tbnid=4-XkWPawoYFRjM&vet=12ahUKEwi8hbry3-eBAxXVimMGHSO-CaAQMygCegQIARBj..i&imgrefurl=https%3A%2F%2Fwww.npr.org%2Fsections%2Fthetwo-way%2F2015%2F05%2F20%2F408204554%2Fu-s-releases-documents-seized-from-osama-bin-ladens-compound&docid=we2CaLLQ-4sL3M&w=2100&h=1181&q=bin%20laden&safe=active&ved=2ahUKEwi8hbry3-eBAxXVimMGHSO-CaAQMygCegQIARBj");
+        background-image: url("https://images.unsplash.com/photo-1552872673-9b7b99711ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
         background-color: #214ee2;
         font-family: Arial, sans-serif;
       }
@@ -99,95 +93,18 @@
         window.location.href = url;
       });
     </script>
-  </body>
-</html>");
-        background-color: #214ee2;
-        font-family: Arial, sans-serif;
-      }
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-      }
-      label {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-      select {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-        width: 300px;
-        margin-bottom: 20px;
-      }
-      input[type="text"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-        width: 300px;
-        margin-bottom: 20px;
-      }
-      button[type="submit"] {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-        background-color: #4285f4;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      button[type="submit"]:hover {
-        background-color: #357ae8;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Search the web!</h1>
-    <form id="search-form" method="get">
-      <label for="search-engine">Search engine:</label>
-      <select id="search-engine" name="engine">
-        <option value="google">Google</option>
-        <option value="bing">Bing</option>
-        <option value="yahoo">Yahoo</option>
-        <option value="duckduckgo">DuckDuckGo</option>
-      </select>
-      <label for="search-query">Search query:</label>
-      <input type="text" id="search-query" name="q">
-      <button type="submit">Search</button>
-    </form>
+    
+    <!-- Snake Game Code -->
+    <canvas width="400" height="400" id="game"></canvas>
     <script>
-      const form = document.getElementById('search-form');
-      const select = document.getElementById('search-engine');
-      const query = document.getElementById('search-query');
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const engine = select.value;
-        const q = query.value;
-        let url;
-        switch (engine) {
-          case 'bing':
-            url = `https://www.bing.com/search?q=${q}`;
-            break;
-          case 'yahoo':
-            url = `https://search.yahoo.com/search?p=${q}`;
-            break;
-          case 'duckduckgo':
-            url = `https://duckduckgo.com/?q=${q}`;
-            break;
-          default:
-            url = `https://www.google.com/search?q=${q}`;
-            break;
-        }
-        window.location.href = url;
-      });
+      var canvas = document.getElementById('game');
+      var context = canvas.getContext('2d');
+      
+      // Rest of the Snake game JavaScript code here...
+      
+      // start the game
+      requestAnimationFrame(loop);
     </script>
+    <!-- End of Snake Game Code -->
   </body>
 </html>
